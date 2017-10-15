@@ -3,7 +3,7 @@ import telnetGPIO as tg
 import time
 import sys
 
-if len(sys.argv) != 5:
+if len(sys.argv) != 6:
     raise Exception("Not enough input arguments")
 
 msgBroker = sys.argv[1]
@@ -22,4 +22,4 @@ while(1 == 1):
     if(conn.newState != conn.oldState):
         conn.writeChange()
 
-    time.sleep(.1)
+    time.sleep(float(sys.argv[5]))
